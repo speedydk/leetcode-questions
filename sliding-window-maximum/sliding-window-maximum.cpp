@@ -1,5 +1,8 @@
 class Solution {
 public:
+    
+    
+    // Using Priority_Queue
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         priority_queue<pair<int,int>>que;
         vector<int>ans;
@@ -15,6 +18,7 @@ public:
             que.push({nums[i],i});
             while(que.top().second<= i-k)
                 que.pop();
+            
             ans.push_back(que.top().first);
         }
         
